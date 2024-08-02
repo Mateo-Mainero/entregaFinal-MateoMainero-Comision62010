@@ -1,0 +1,1160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {      
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;  
+      min-height: 100%;
+  }
+  
+  /*NAVEGADOR*/
+  body.dark-theme {
+      background-color: #333333;
+      color: #ffffff;
+  }
+  
+  
+  
+  nav {
+    background-color: #0056b3;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    
+}
+
+.nav-logo {
+    margin: 10px 20px;
+    width: 200px;
+    height: auto;
+}
+
+.nav-menu {
+  
+    display: flex;
+    gap: 10px;
+}
+
+.nav-menu button {
+    background-color: #0056b3;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    
+}
+
+.nav-menu button:hover {
+    background-color: #183153;
+    color: white;
+}
+
+/* Estilos para el menú hamburguesa */
+.icon {
+    color: white;
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos responsive para el menú hamburguesa */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; 
+    }
+
+    .icon {
+        display: block; 
+    }
+
+    .nav-menu.responsive {
+        display: flex; 
+        flex-direction: column;
+        position: absolute;
+        top: 200px; 
+        right: 30px; 
+        background-color: #0056b3;
+        padding: 10px;
+        box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        z-index: 1;
+    }
+
+    .nav-menu.responsive button {
+        display: block;
+        width: 100%; 
+        text-align: right;
+         
+    }
+}
+
+
+    .switch {    
+      margin: auto;  
+      padding: 10px 20px;
+      position:relative;
+      display: inline-block;
+      width: 65px;
+      height: 34px;
+      
+    }
+    
+    
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #183153;
+      transition: .3s;
+      border-radius: 30px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 30px;
+      width: 30px;
+      border-radius: 20px;
+      left: 2px;
+      bottom: 2px;
+      z-index: 2;
+      background-color: #e8e8e8;
+      transition: .3s;
+    }
+    
+    .sun svg {
+      position: absolute;
+      top: 6px;
+      left: 36px;
+      z-index: 1;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .moon svg {
+      fill: #2395c2;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: 1;
+      width: 24px;
+      height: 24px;
+    }
+    
+    /* .switch:hover */
+    .sun svg {
+      animation: rotate 15s linear infinite;
+    }
+    
+    @keyframes rotate {
+     
+      0% {
+        transform: rotate(0);
+      }
+    
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .moon svg {
+      animation: tilt 5s linear infinite;
+    }
+    
+    @keyframes tilt {
+     
+      0% {
+        transform: rotate(0deg);
+      }
+    
+      25% {
+        transform: rotate(-10deg);
+      }
+    
+      75% {
+        transform: rotate(10deg);
+      }
+    
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+   
+    
+    .input:checked + .slider {
+      background-color: #183153;
+    }
+    
+    .input:focus + .slider {
+      box-shadow: 0 0 1px #183153;
+    }
+    
+    .input:checked + .slider:before {
+      transform: translateX(30px);
+    }
+  
+  .container {    
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      
+      
+  }
+  
+  .card {        
+      border-radius: 8px;
+      box-shadow:  4px 8px rgb(0 0 0 / 10%);
+      overflow: hidden;
+      transition: transform 0.2s;
+      background-color: #f0f0f0;
+      color: #333333;
+      
+  }
+  
+  .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: scale(1.2);
+  }
+  
+  .card img {      
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      
+  }
+  
+  .card-body {
+      padding: 20px;
+      text-align: center;
+  }
+  
+  .card-body h3 {
+      font-size: 20px;
+    
+  }
+  .h3-card{
+      display: flex;
+      justify-content: center;
+  }
+  
+  .card-body p {
+      font-size: 16px;
+      color: #6c757d;
+     
+     
+  }
+  .p-card{
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+  }
+  .boton-div{
+      display: flex;
+      justify-content: center;
+  }
+  
+  .card-body button {
+      background-color: #b90ca2;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+     
+  }
+  .botonn{
+      width: 50%;
+      margin: 1rem;
+      background-color: #183153;
+      color: white;
+  }
+  
+  .botonn:hover {
+      background-color: #0056b3;
+  }
+  
+ 
+  
+/*************** Estilos para el carrito ***************/
+  .container {
+    padding: 50px 0;
+    max-width: 1000px;
+    margin: auto;    
+    border-radius: 8px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    
+      
+  }
+  
+  .cart-container {    
+      background-color: #ffffff;
+      border-radius:8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);           
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .cart-items {
+      flex: 1 1 50%;
+      margin-right: 10px;
+      padding-right: 20px;      
+  }
+  
+  .cart-summary {
+      flex: 1 1 50%;
+      padding-left: 20px;
+  }
+  .cart-p{
+      color: black;
+      font-weight: bold;
+  }
+  
+  .cart-card {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 20px;          
+      border-radius: 8px;
+      background-color: hsla(240, 0%, 59%, 0.295);
+  }
+  
+  .cart-card img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+  }
+  
+  .card-details {
+      flex-grow: 1;
+  }
+  
+  .btn-carrito {
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      font-weight: bold;
+      gap: 5px;
+  }
+  .btn-carrito svg{
+      width: 16px; 
+      height: 16px;
+      fill: currentColor; 
+  }
+  .btn-pagar {
+      padding: 8px 45px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      font-weight: bold;
+  }
+  
+  .btn{
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      font-weight: bold;
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  
+  .btn-danger {
+      background-color: #dc3545;
+      color: #fff;
+      display: flex;
+      align-items: center;
+  }
+  
+  .btn-success {
+   
+      background-color: #28a745;
+      color: #fff;
+  }
+  
+  .total-container {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .total-container p {
+      font-size: 18px;
+      font-weight: bold;
+  }
+  
+  .empty-cart-msg {
+      text-align: center;
+      margin: 20px;
+      font-size: 18px;
+      color: #666;
+  }
+  
+  
+  
+/*************** Seccion Beneficios ***************/
+  #about-intro, #our-team, #why-choose-us {
+    margin-bottom: 40px;
+    padding: 20px;
+  }
+  
+  h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  p {
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  ul {    
+    padding-left: 20px;
+    
+  }
+  
+  li {
+    margin-bottom: 10px;
+    color: black;
+    list-style-type: none;
+  }
+  
+  section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+  }
+  
+  section h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+  }
+  
+  .team-member h4 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .team-member p {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    #about-intro, #our-team, #why-choose-us {
+        padding: 10px;
+    }
+  }
+  
+  /*************** Estilos para el Team ***************/
+  #our-team .team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+  }
+  
+  .team-member {
+    align-items: center;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    object-fit: cover;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #007bff;
+  }
+  
+  .team-member h4 {
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .team-member p {
+    color: #777;
+    font-size: 0.9em;
+  }
+
+  
+  
+  /*************** Button Styles ***************/
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .team-member {
+        grid-template-columns: repeat(2, 1fr);
+
+  }
+  
+    #our-team .team-members {
+        flex-direction: row ;
+        align-items: center;
+    }
+  }
+  
+  
+  /*************** Footer ***************/
+  .pie-pagina {
+      width: 100%;
+      background-color: #074991;
+      
+  
+    }
+    .pie-pagina .grupo-1 {
+      width: auto;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 100px;
+      padding: 15px 0;
+    }
+    .pie-pagina .grupo-1 .box figure {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0 0 ;
+    }
+    .pie-pagina .grupo-1 .box img {
+      width: 100%;
+      border-radius: 0px;      
+    }
+
+    .pie-pagina .grupo-1 .box h2 {
+      color: #fff;
+      margin-bottom: 25px;
+      font-size: 20px;
+      margin: 40px 0 0 ;
+    }
+    .pie-pagina .grupo-1 .box p {
+      color: #efefef;
+      margin: 20px 0 0 ;
+      
+    }
+    .pie-pagina .grupo-1 .red-social a {
+      display: inline-block;
+      text-decoration: none;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      color: #fff;
+      margin-right: 10px;
+      background-color: #0d2033;
+      text-align: center;
+      transition: all 300ms ease;
+    }
+    .pie-pagina .grupo-1 .red-social a:hover {
+      color: rgb(18, 216, 216);
+    }
+    .pie-pagina .grupo-2 {
+      background-color: #181c20;
+      padding: 15px 10px;
+      text-align: center;
+      color: white;
+    }
+    .pie-pagina .grupo-2 small {
+      font-size: 18px;
+    }
+  
+    
+  
+  
+  
+  
+  /*************** Formulario ***************/
+    .div-padre {  
+      padding: 60px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      background: url(https://assets.turismocity.com/img/header_home_full.avif) no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.85;
+  }
+
+  .form-form{
+      
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;      
+  }
+
+  .h1-contact {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: black;    
+  }
+  
+  
+  .form-group {
+      margin-bottom: 20px;
+      
+  }
+  
+  label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+      
+  }
+  
+  .form-control {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; 
+      margin-bottom: 10px;
+     
+  }
+  
+  textarea {
+      height: 200px; 
+      resize: vertical; 
+  }
+  .div-btn-form{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+  }
+  .btn-form {
+    
+      background-color: #074991;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      width: 50%;
+  }
+  
+  .btn-form:hover {
+      background-color: #007bff;
+      
+  }
+
+
+  @media screen and (max-width: 824px) {
+    .pie-pagina .grupo-1 {
+      width: 90%;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 30px;
+      padding: 35px 0; 
+           
+    }
+  }
+
+  
+/********** Aerolineas *********/
+  .airline-item{
+    height: 30%;
+    width: auto;
+    background-color: #074991;
+    border-radius: 0 160px 0 0px;
+  }
+  .airline-item a[data-v-097c0db5] {    
+    display: flex;    
+    flex: 0 0 auto;    
+    justify-content: center;
+    align-items: center;    
+    color: #fdfafa;  
+    font-weight: bold;
+}
+  .airline-item a[data-v-097c0db5]:hover {
+    box-shadow: 0 4px 25px 0 rgba(112,135,165,.4)
+}
+  
+
+
+
+
+/*********** Estilos para el navFooter ************/
+.site-logo{
+  height: 50px;
+  width: auto;
+}
+#PageNavBar {
+  /***********************************************************************/ 
+  padding: 10px;
+  display: flex;  
+  
+}
+#PageNavBarSectionList{
+  a {
+    color: white;
+    text-decoration: none;   
+    
+    
+  }  
+  
+  a:hover {    
+    color: #0056b3;
+    
+  }
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+}
+
+#PageNavBarSectionList,
+#PageNavBarUserOptions {
+  display: flex;
+  list-style: none;  
+  flex-wrap: wrap; 
+}
+
+.HeaderLink {
+  margin: 15px;
+  justify-content: center;
+  
+}
+
+
+
+
+
+/*************** Mostrar elementos ocultos en diferentes tamaños de pantalla ***************/
+@media (min-width: 768px) {
+  .hidden-xs {
+    display: inline;
+    
+  }
+}
+
+@media (min-width: 992px) {
+  .hidden-sm {
+    display: inline;
+    
+  }
+}
+
+@media (min-width: 1200px) {
+  .hidden-md {
+    display: inline;    
+        
+  }
+}
+
+/************** Estilos responsivos adicionales ***************/
+@media (max-width: 767px) {
+  #PageNavBarSectionList {
+    justify-content: center; 
+    
+  }
+
+  .HeaderLink {
+    margin: 10px; 
+    
+  }
+}
+
+@media (max-width: 576px) {
+  .site-logo {
+    height: 30px; 
+  }
+
+  #PageNavBarSectionList, #PageNavBarUserOptions {
+    justify-content: center; 
+  }
+}
+
+
+
+/*************** Estilos para el menú desplegable de moneda ***************/
+.currency-list {  
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.currency-list li {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.currency-list li:hover {
+  background-color: #333;
+  color: white;
+  
+}
+
+
+/*************** Estilos adicionales para el dropdown ***************/
+#countryDropDown {
+  position: absolute;  
+  background-color: #91077f;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  display: none; 
+}
+
+
+
+/************** Estilos para las publicidades ******************/
+.brands-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  
+}
+
+.brands-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.brands-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+  justify-content: center;
+}
+
+.brands-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.brands-container a img {
+  height: 50px;
+  transition: height 0.3s ease-in-out; /* Transición suave para el cambio de tamaño */
+}
+
+/******** Clases adicionales ********/
+.hidden-xs {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .hidden-xs {
+    display: inline;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hidden-xs {
+    display: grid;
+    justify-content: center;
+  }
+}
+
+/********* Estilos responsivos adicionales *********/
+@media (max-width: 575px) {
+  .brands-text {
+    font-size: 16px; 
+  }
+
+  .brands-container {
+    gap: 8px; 
+  }
+
+  .brands-container a img {
+    height: 40px; 
+  }
+
+  .brands-container a {
+    flex: 1 1 calc(50% - 8px); 
+    max-width: calc(50% - 8px); 
+  }
+}
+
+@media (max-width: 992px) {
+  .brands-text {
+    font-size: 17px; 
+  }
+
+  .brands-container {
+    gap: 9px; 
+  }
+
+  .brands-container a img {
+    height: 45px; 
+  }
+
+  .brands-container a {
+    flex: 1 1 calc(33.33% - 9px); 
+    max-width: calc(33.33% - 9px); 
+  }
+}
+
+@media (max-width: 1200px) {
+  .brands-text {
+    font-size: 18px; 
+  }
+
+  .brands-container {
+    gap: 10px; 
+  }
+
+  .brands-container a img {
+    height: 50px;
+  }
+
+  .brands-container a {
+    flex: 1 1 calc(25% - 10px); 
+    max-width: calc(25% - 10px); 
+  }
+}
+
+
+/************** Alert Notificaciones ******************/
+
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: 40%;
+  width: 300px;
+  max-width: 90%;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.alert-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.alert-message {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+.alert-notificacion {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+  
+}
+
+.alert-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.alert-button:hover {
+  background-color: #0056b3;
+}
+
+/********** Estilos responsivos **********/
+@media (max-width: 1200px) {
+  .custom-alert {
+      top: 10px;
+      right: 20%;
+      padding: 15px;
+  }
+
+  .alert-message {
+      font-size: 14px;
+  }
+
+  .alert-button {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+}
+@media (min-width: 576px){
+  .custom-alert {
+    top: 10px;
+    right: 40%;
+    padding: 15px;
+}
+
+.alert-message {
+    font-size: 14px;
+}
+
+.alert-button {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+}
+
+
+
+/********** Video de fondo **********/
+   .video-background {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    z-index: -1; /* Asegúrate de que el video esté detrás de otros elementos */
+}
+
+#backgroundVideo {
+    width: auto;
+    height: auto;
+    object-fit: cover; /* Asegúrate de que el video cubra toda la pantalla */
+}
+
+/********** Estilo del contenido principal **********/
+.content {
+    position: relative;
+    z-index: 1;
+    color: white; 
+}
+
+
+
+/********** Estilos para dispositivos móviles **********/
+@media (max-width: 768px) {
+  nav {
+      height: 50px; 
+      padding: 0 10px;
+  }
+
+  .container {
+      margin-top: 50px; 
+  }
+}
+
+
+
+
+
+/********** Estilo del Carrusel **********/
+.carrusel {
+  margin: 10px 0;
+  height: 25vh;
+  display: flex;
+  align-items: center;  
+  
+}
+
+.carrusel-items {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 30px 30px;
+  
+}
+
+.carrusel-item {
+  min-width: 300px;
+  max-width: 300px;
+  height: 200px;
+  outline: px solid rgb(2, 2, 2);
+  cursor: pointer;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.carrusel-item:hover {
+  transform: scale(1.5);
+}
